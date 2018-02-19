@@ -1,1 +1,23 @@
+- name: install wrapper
+  copy:
+    src: gpustatd.sh
+    dest: /home/miner/gpustatd.sh
+    owner: miner
+    group: miner
+    mode: 0755
 
+- name: gpustatd config
+  copy:
+    src: gpustatd.conf
+    dest: /etc/gpustatd.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: create log directory
+  file:
+    path: /var/log/gpustatd
+    owner: miner
+    group: miner
+    mode: 0755
+    state: directory
