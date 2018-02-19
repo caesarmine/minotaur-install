@@ -14,7 +14,7 @@
 
 - name: download minotaur
   get_url:
-    url: "https://github.com/m4rkw/minotaur/releases/download/v{{ latest_minotaur.stdout }}/minotaur-{{ latest_minotaur.stdout }}_centos7.tar.gz"
+    url: "https://github.com/m4rkw/minotaur/releases/download/v{{ latest_minotaur.stdout }}/minotaur-{{ latest_minotaur.stdout }}_ubuntu.tar.gz"
     dest: "/root/minotaur-{{ latest_minotaur.stdout }}_centos7.tar.gz"
   when: st.stat.exists == false or latest_minotaur.stdout != minotaur_version.stdout
 
